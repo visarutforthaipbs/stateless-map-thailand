@@ -220,3 +220,8 @@ a {
 #province-filter {
   font-family: var(--main-font);
 }
+
+#credit :hover {
+  background-color: #45589c;
+  color: white;
+}
