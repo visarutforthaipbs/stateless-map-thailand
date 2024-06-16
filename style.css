@@ -1,0 +1,222 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap");
+
+/* Define root variables for consistent theming */
+:root {
+  --text-color: rgb(255, 0, 0);
+  --background-color: #d2c6b0ff;
+  --card-background-color: #45589c;
+  --shadow-color: #243244ff;
+  --content-width: 60%;
+  --text-color-main: #282828;
+  --h3-color-text: #d2c6b0ff;
+  --hover-background-color: #b79a5c;
+  --main-font: "Noto Sans Thai", sans-serif;
+  --secondary-font: "IBM Plex Sans Thai", sans-serif;
+}
+
+/* Apply general styles to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--main-font), sans-serif;
+}
+
+/* Style the body and HTML elements */
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Define styles for the map container */
+#map {
+  height: 100vh;
+  width: 100%;
+}
+
+/* Style for anchor tags */
+a {
+  color: var(--h3-color-text);
+  text-decoration: none;
+}
+
+/* Style the description box */
+#description {
+  position: absolute;
+  color: white;
+  top: 20px; /* Adjusted for zoom control */
+  left: 60px; /* Adjusted for zoom control */
+  z-index: 999;
+  background: var(--shadow-color); /* Changed background color */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  width: 350px;
+  font-size: 14px; /* Increased font size for better readability */
+}
+
+/* Define styles for the headings in the description box */
+#description h2 {
+  margin: 0 0 5px 0;
+  font-size: 26px;
+  color: var(--background-color);
+}
+
+/* Define styles for the paragraphs and unordered lists in the description box */
+#description p,
+#description ul {
+  margin: 5px 0;
+  font-size: 14px; /* Increased font size for better readability */
+}
+
+/* Define styles for the toggle button */
+#toggle-button {
+  margin-top: 10px;
+  padding: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Define hover effect for the toggle button */
+#toggle-button:hover {
+  opacity: 0.8;
+}
+
+/* Define styles for the flag images in the toggle button */
+#toggle-button img {
+  width: 30px;
+  height: 20px;
+  border-radius: 3px;
+}
+
+/* Define styles for the logo */
+#logo {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+  width: 10px;
+}
+
+/* Define styles for the leaflet popup content */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--shadow-color); /* Changed background color */
+  color: white;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Add styles for the legend */
+.info.legend {
+  background: var(--shadow-color); /* Changed background color */
+  padding: 12px 15px; /* Increased padding */
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  line-height: 20px; /* Adjusted line height */
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  width: 150px; /* Adjusted width */
+}
+
+/* Define styles for the legend heading */
+.info.legend h4 {
+  margin: 0 0 5px;
+  color: var(--background-color);
+}
+
+/* Define styles for the legend item */
+.info.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+  background: #4b7686ff; /* Match this color with the bubble color */
+  border-radius: 50%; /* Makes the square a circle */
+}
+
+/* Define styles for the header containing images */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 10px;
+  right: 150px; /* Adjust as necessary */
+  z-index: 1000;
+}
+
+/* Define styles for the header images */
+.header-img {
+  max-width: 50px; /* Adjust as necessary */
+  height: auto;
+}
+
+/* Responsive styles for screens up to 768px wide */
+@media (max-width: 768px) {
+  #description {
+    top: 10px; /* Adjusted to keep it at the top */
+    left: 60px; /* Adjusted to avoid overlap with zoom control */
+    width: calc(100% - 70px);
+    max-width: none;
+    font-size: 14px;
+  }
+  .info.legend {
+    bottom: 10px; /* Adjusted to keep it at the bottom */
+    left: 10px; /* Adjusted to keep it to the left */
+    font-size: 16px; /* Adjusted font size for better readability */
+  }
+}
+
+/* Responsive styles for screens up to 480px wide */
+@media (max-width: 480px) {
+  #description {
+    font-size: 12px;
+  }
+  .info.legend {
+    font-size: 14px; /* Smaller font for smaller screens */
+  }
+}
+/* Style for the credit section */
+#credit {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+#credit p {
+  margin: 0;
+  font-size: 12px;
+}
+
+/* Style for the province filter dropdown */
+#province-filter {
+  margin-top: 10px;
+  padding: 5px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+  font-size: 14px;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+#province-filter {
+  font-family: var(--main-font);
+}
