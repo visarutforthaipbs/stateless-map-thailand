@@ -225,3 +225,7 @@ a {
   background-color: #45589c;
   color: white;
 }
+
+.leaflet-control-attribution {
+  display: none;
+}
