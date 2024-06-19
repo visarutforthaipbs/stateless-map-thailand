@@ -1,9 +1,9 @@
 // Initialize the map centered on Thailand
 const map = L.map("map").setView([13.736717, 100.523186], 6);
 
-// Replace with Mapbox dark style tiles
+// Define your custom Mapbox style layer
 L.tileLayer(
-  "https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmlzYXJ1dCIsImEiOiJjbHdkNHF4YnoxNDg0MmtwbHgzeXBseGdsIn0.TEjiK_8FMW2n_TyfgEEYLA",
+  "https://api.mapbox.com/styles/v1/visarut/clxlhlcjd00fo01pf3ibwdkaj/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmlzYXJ1dCIsImEiOiJjbHdkNHF4YnoxNDg0MmtwbHgzeXBseGdsIn0.TEjiK_8FMW2n_TyfgEEYLA",
   {
     attribution:
       "Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
@@ -69,7 +69,7 @@ const addBubbles = (data) => {
         radius: radius,
         color: color,
         fillColor: color,
-        fillOpacity: 0.5,
+        fillOpacity: 0.7,
       }
     ).bindPopup(currentLanguage === "th" ? popupContentTh : popupContentEn);
 
@@ -122,8 +122,6 @@ addLegend();
 
 // Function to toggle text language
 const toggleLanguage = () => {
-  const titleTh = document.getElementById("description-title-th");
-  const titleEn = document.getElementById("description-title-en");
   const textTh = document.getElementById("description-text-th");
   const textEn = document.getElementById("description-text-en");
   const button = document.getElementById("toggle-button");
@@ -131,8 +129,6 @@ const toggleLanguage = () => {
   if (currentLanguage === "th") {
     // Switch to English
     currentLanguage = "en";
-    titleTh.style.display = "none";
-    titleEn.style.display = "block";
     textTh.style.display = "none";
     textEn.style.display = "block";
     button.innerHTML =
@@ -140,8 +136,7 @@ const toggleLanguage = () => {
   } else {
     // Switch to Thai
     currentLanguage = "th";
-    titleTh.style.display = "block";
-    titleEn.style.display = "none";
+
     textTh.style.display = "block";
     textEn.style.display = "none";
     button.innerHTML =
