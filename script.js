@@ -106,9 +106,9 @@ const addLegend = () => {
   legend.onAdd = function () {
     const div = L.DomUtil.create("div", "info legend");
     div.innerHTML = `
-      <h4>${currentLanguage === "th" ? "คำอธิบาย" : "Legend"}</h4>
+      <h4>${currentLanguage === "th" ? "" : ""}</h4>
       <i style="background:#4b7686f"></i> ${
-        currentLanguage === "th" ? "จำนวนไร้สัญชาติ" : "Stateless People"
+        currentLanguage === "th" ? "จำนวนไร้สัญชาติ" : "Stateless population"
       }<br>
     `;
     return div;
@@ -120,7 +120,6 @@ const addLegend = () => {
 // Add initial legend
 addLegend();
 
-// Function to toggle text language
 const toggleLanguage = () => {
   const textTh = document.getElementById("description-text-th");
   const textEn = document.getElementById("description-text-en");
@@ -131,16 +130,13 @@ const toggleLanguage = () => {
     currentLanguage = "en";
     textTh.style.display = "none";
     textEn.style.display = "block";
-    button.innerHTML =
-      '<img src="Flag_of_Thailand.svg.png" alt="Thai Flag" width="15">'; // Use flag icons
+    button.textContent = "ENG";
   } else {
     // Switch to Thai
     currentLanguage = "th";
-
     textTh.style.display = "block";
     textEn.style.display = "none";
-    button.innerHTML =
-      '<img src="Flag_of_the_United_Kingdom.png" alt="English Flag" width="15">'; // Use flag icons
+    button.textContent = "ไทย";
   }
 
   // Update legend
