@@ -129,12 +129,20 @@ a {
 /* Responsive styles for screens up to 768px wide */
 @media (max-width: 768px) {
   #description {
-    top: 10px; /* Adjusted to keep it at the top */
-    left: 60px; /* Adjusted to avoid overlap with zoom control */
-    width: calc(100% - 70px);
-    max-width: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+    background: var(--shadow-color);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
     font-size: 14px;
-    max-height: fit-content;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   .info.legend {
     bottom: 10px; /* Adjusted to keep it at the bottom */
@@ -150,6 +158,7 @@ a {
     width: calc(100% - 70px);
     max-width: 150px;
     left: 230px;
+    top: 10px;
     max-height: fit-content;
   }
   .info.legend {
