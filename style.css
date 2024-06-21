@@ -154,15 +154,44 @@ a {
 /* Responsive styles for screens up to 480px wide */
 @media (max-width: 480px) {
   #description {
-    font-size: 10px;
+    font-size: 9px !important;
     width: calc(100% - 70px);
     max-width: 150px;
-    left: 28vh;
-    top: 10px;
+    left: 10px;
     max-height: fit-content;
+    gap: 0px;
   }
-  .info.legend {
-    font-size: 14px; /* Smaller font for smaller screens */
+  #credit {
+    display: none;
+  }
+
+  .header-img {
+    max-width: 40px;
+    bottom: -30px;
+    right: 3px;
+    position: absolute;
+  }
+  #toggle-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    background-color: #6a8394ff;
+    border-radius: 5px;
+  }
+  #province-filter {
+    margin-top: 10px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 100%;
+    font-size: 12px !important;
+    z-index: 1000;
   }
 }
 /* Style for the credit section */
