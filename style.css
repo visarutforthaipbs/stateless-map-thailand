@@ -157,7 +157,7 @@ a {
     font-size: 10px;
     width: calc(100% - 70px);
     max-width: 150px;
-    left: 230px;
+    left: 28vh;
     top: 10px;
     max-height: fit-content;
   }
