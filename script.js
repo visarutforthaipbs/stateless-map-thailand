@@ -99,49 +99,18 @@ const loadCSVData = (url) => {
 // Load and add markers from the CSV
 loadCSVData("stateless-people-tambon-thai.csv");
 
-// Function to add legend to the map
-const addLegend = () => {
-  const legend = L.control({ position: "bottomleft" });
-
-  legend.onAdd = function () {
-    const div = L.DomUtil.create("div", "info legend");
-    div.innerHTML = `
-      <h4>${currentLanguage === "th" ? "" : ""}</h4>
-      <i style="background:#4b7686f"></i> ${
-        currentLanguage === "th" ? "จำนวนไร้สัญชาติ" : "Stateless population"
-      }<br>
-    `;
-    return div;
-  };
-
-  legend.addTo(map);
-};
-
-// Add initial legend
-addLegend();
-
 const toggleLanguage = () => {
-  const textTh = document.getElementById("description-text-th");
-  const textEn = document.getElementById("description-text-en");
   const button = document.getElementById("toggle-button");
 
   if (currentLanguage === "th") {
     // Switch to English
     currentLanguage = "en";
-    textTh.style.display = "none";
-    textEn.style.display = "block";
-    button.textContent = "ENG";
+    button.textContent = "ไทย";
   } else {
     // Switch to Thai
     currentLanguage = "th";
-    textTh.style.display = "block";
-    textEn.style.display = "none";
-    button.textContent = "ไทย";
+    button.textContent = "ENG";
   }
-
-  // Update legend
-  document.querySelector(".info.legend").remove();
-  addLegend();
 
   // Update popups
   markers.forEach((markerObj) => {

@@ -45,17 +45,19 @@ a {
 /* Style the description box */
 #description {
   position: absolute;
-  color: white;
-  top: 20px; /* Adjusted for zoom control */
-  left: 60px; /* Adjusted for zoom control */
+  bottom: 20px; /* Move to the bottom-left corner */
+  left: 20px; /* Adjust as needed */
   z-index: 999;
   background: var(--shadow-color); /* Changed background color */
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  max-width: 90%;
-  width: 350px;
-  font-size: 14px; /* Increased font size for better readability */
+  width: 300px; /* Reduce width */
+  font-size: 14px;
+  opacity: 0.8; /* Reduce opacity */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Add space between elements */
 }
 
 /* Define styles for the headings in the description box */
@@ -69,7 +71,7 @@ a {
 #description p,
 #description ul {
   margin: 5px 0;
-  font-size: 14px; /* Increased font size for better readability */
+  font-size: 14px;
 }
 
 #toggle-button {
@@ -106,39 +108,6 @@ a {
   opacity: 0.7;
 }
 
-/* Add styles for the legend */
-.info.legend {
-  background: var(--shadow-color); /* Changed background color */
-  padding: 12px 15px; /* Increased padding */
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  line-height: 20px; /* Adjusted line height */
-  color: white;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  z-index: 999;
-  width: 150px; /* Adjusted width */
-  opacity: 0.7;
-}
-
-/* Define styles for the legend heading */
-.info.legend h4 {
-  margin: 0 0 5px;
-  color: var(--background-color);
-}
-
-/* Define styles for the legend item */
-.info.legend i {
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin-right: 8px;
-  opacity: 0.7;
-  background: #4b7686ff; /* Match this color with the bubble color */
-  border-radius: 50%; /* Makes the square a circle */
-}
-
 /* Define styles for the header containing images */
 .header {
   display: flex;
@@ -165,6 +134,7 @@ a {
     width: calc(100% - 70px);
     max-width: none;
     font-size: 14px;
+    max-height: fit-content;
   }
   .info.legend {
     bottom: 10px; /* Adjusted to keep it at the bottom */
@@ -210,7 +180,7 @@ a {
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
-  max-width: 250px;
+  max-width: 100%;
   font-size: 14px;
   z-index: 1000; /* Ensure it appears above other content */
 }
