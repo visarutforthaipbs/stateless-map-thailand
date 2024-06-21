@@ -146,7 +146,11 @@ a {
 /* Responsive styles for screens up to 480px wide */
 @media (max-width: 480px) {
   #description {
-    font-size: 12px;
+    font-size: 10px;
+    width: calc(100% - 70px);
+    max-width: 150px;
+    left: 230px;
+    max-height: fit-content;
   }
   .info.legend {
     font-size: 14px; /* Smaller font for smaller screens */
